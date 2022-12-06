@@ -6,14 +6,24 @@ from django.http import HttpResponse
 
 def index(request):
     #    return HttpResponse("Welcome to home page")
-    return render(request, 'index.html')
+    context = {
+        "name": "Gaurav",
+        "title": "Index"
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
     # return HttpResponse("Welcome to About page")
-    return render(request, "about.html")
+    context = {
+        "title": "About"
+    }
+    return render(request, "about.html", context)
 
 
 def contact(request):
     # return HttpResponse("Welcome to contact page")
-    return render(request, "contact.html")
+    context = {
+        "title": "Contact"
+    }
+    return render(request, "contact.html", context)
